@@ -135,7 +135,7 @@ To know more [cli commands](https://github.com/mahadeva-shindhe/DevOpsPractice/b
 - Apply a configuration file `kubectl apply -f [file name]`
 - Delete with configuration file `kubectrl delete -f [file name]`
 
-Create [nginx-deployment.yaml](basic-kubectl-commands\nginx-deployment.yaml)
+Create [nginx-deployment.yaml](https://github.com/mahadeva-shindhe/DevOpsPractice/blob/main/basic-kubectl-commands/nginx-deployment.yaml)
 ```
 apiVersion: apps/v1
 kind: Deployment
