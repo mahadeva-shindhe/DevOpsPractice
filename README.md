@@ -115,7 +115,7 @@ different clients which interacts with cluster
 - Kubectl interacts with minikube cluster and cloud cluster
 #### Minikube installation
 Virtualization on local machine required before installing Minikube. [Installation Guide](https://minikube.sigs.k8s.io/docs/start/)
-To know more [cli commands](basic-kubectl-commands\cli-commands.md)
+To know more [cli commands](https://github.com/mahadeva-shindhe/DevOpsPractice/blob/main/basic-kubectl-commands/nginx-deployment.yaml)
 
 #### Basic Kubectl commands
 ###### CRUD commands
