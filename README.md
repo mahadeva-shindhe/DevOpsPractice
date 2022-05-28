@@ -178,3 +178,29 @@ The 3 parts of configuration file and it has information for connecting deployme
 3. Status - automatically generated and added by Kuberentes(desired state, actual state, used for self healing of cluster). Status data is in etcd. etcd holds the current status of any K8s component
 
 
+#### YAML configuration file
+- human friendly data serialization standard for all programming lanaguages
+- syntax: strict indentation
+- store the config file with your code or own git repository
+
+##### Blueprint for pods:
+Template has it's own metadata and spec section and applies to pod
+
+Layers of Abstraction:
+Deployment manage Pods
+ReplicaSet manages 
+
+#### Connecting Deployments to Service to Pods  (Labels & Selectors & Ports)
+
+##### Connecting Deployment to Pods
+- any key-value pair for component
+- Pods get the label through the template blueprint
+- this label is matched by the selector
+
+##### Connecting Services to Deployments
+The selector spec.selector.app should match to deployment metadata.labels.app and spec.template.metadata.labels.app
+
+##### Ports in Service and Pod
+The service's ports.targetPort should match to containerPort for Pod. Each Pod has containerPort and Service has port with Protocol.
+
+
