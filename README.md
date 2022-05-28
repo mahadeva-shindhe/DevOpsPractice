@@ -304,6 +304,7 @@ nodePort - Port for external IP address. Port you need to put into browser. must
 kubectl apply -f mongo-express.yaml
 kubectl get pod
 kubectl get service
+minikube service mongo-express-service
 ```
 
 
