@@ -220,7 +220,7 @@ Kubernetes generats staus automatically. To know more about status use below com
 `kubectl get deployment nginx-deployment -o yaml`
 
 ## Sample Complete Application Setup with Kuberentes Components
-The applications are mongo-express (web app) and mongo(DB) which will be backend db.
+The applications are mongo-express (web app) and mongo(DB) which will be backend db. [Refer Code] (https://github.com/mahadeva-shindhe/DevOpsPractice/tree/main/demo-kubernetes-components)
 
 #### Overview of K8s Components
 - 2 deployment/Pod
