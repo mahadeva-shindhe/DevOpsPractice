@@ -245,3 +245,68 @@ The URL:
 Browser -> Mongo Express(External Service)-> Pod (Mong Express) -> DB(Internal Service)-> MongoDB(Pod) -> Secret(db userid, password)
 
 
+
+#### Create Secret
+Secret must be created before the Deployment. We will create secret for DB user, DB Password. Values are base64 encoded values
+
+Secret Configuration File
+- kind:Secret
+- metdata/name: a random name
+- type: Opaque - default for arbitatry key-value pairs
+- data: the actual contents in key value pairs
+
+[base64 encode](https://www.base64encode.org/)
+
+```
+kubectl apply -f mongo-secret.yaml
+kubectl get secret
+```
+
+Service Configuration File
+- Kind: Service
+- metadata/name: a random name
+- selector: to connect to pod through label
+- ports
+    - port: service Port
+    - TargetPort: containerPort of deployment
+]
+#### Create mongodb deployment and mongodb internal service
+``` 
+kubectl apply -f mongo.yaml
+```
+ConfigMap
+- external configuration
+- centralized
+- other components can use it
+
+
+ConfigMap configuration File
+- kind: ConfigMap
+- metadata/name: a random name
+- data: the actual contents in key value pairs
+
+ConfgiMap must already be in the K8s cluster when referencing it
+
+```
+kubectl apply -f mongo-configmap.yaml
+```
+#### create mongo-express and external service
+
+How to make external service?
+`type - loadbalancer` 
+
+It assigns service an external IP address and so accepts external requests.
+
+nodePort - Port for external IP address. Port you need to put into browser. must between 30000-32767
+
+```
+kubectl apply -f mongo-express.yaml
+kubectl get pod
+kubectl get service
+```
+
+
+
+
+
+
