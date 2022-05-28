@@ -219,3 +219,29 @@ Kubernetes generats staus automatically. To know more about status use below com
 
 `kubectl get deployment nginx-deployment -o yaml`
 
+## Sample Complete Application Setup with Kuberentes Components
+The applications are mongo-express (web app) and mongo(DB) which will be backend db.
+
+#### Overview of K8s Components
+- 2 deployment/Pod
+- 2 Service
+- 1 ConfigMap
+- 1 Secret
+
+MongoDB                 - Internal Service
+
+Mongo Express           - Deployment
+
+DB URL                  - ConfigMap
+
+DB User, DB password    - Secret
+
+To access mongo express, will use external service.
+The URL:
+- IP Address of Node
+- Port of external service
+
+##### Flow for the application:
+Browser -> Mongo Express(External Service)-> Pod (Mong Express) -> DB(Internal Service)-> MongoDB(Pod) -> Secret(db userid, password)
+
+
