@@ -202,5 +202,20 @@ The selector spec.selector.app should match to deployment metadata.labels.app an
 
 ##### Ports in Service and Pod
 The service's ports.targetPort should match to containerPort for Pod. Each Pod has containerPort and Service has port with Protocol.
+[nginx-deployment.yaml](https://github.com/mahadeva-shindhe/DevOpsPractice/blob/main/basic-kubectl-commands/nginx-deployment.yaml)
+[nginx-service.yaml](https://github.com/mahadeva-shindhe/DevOpsPractice/blob/main/basic-kubectl-commands/nginx-service.yaml)
+```
+kubectl apply -f nginx-deployment.yaml
+kubectl apply -f nginx-service.yaml
 
+kubectl get pod
+kubectl get service
+
+kubectl describe service nginx-service
+kubectl get pod -o wide
+```
+
+Kubernetes generats staus automatically. To know more about status use below command
+
+`kubectl get deployment nginx-deployment -o yaml`
 
